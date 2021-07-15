@@ -18,16 +18,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 fb">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top ft">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">JavaScript Template</a>
+            <a class="navbar-brand" href="/index.html"><span class="iconify" data-icon="dashicons:buddicons-replies"
+                    data-inline="false"></span> Fizz Buzz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,13 +37,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="/index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                        <a class="nav-link active" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about.html">About Me</a>
@@ -52,30 +54,121 @@
     </nav>
 
     <main class="flex-shrink-0">
-        <div class="container">
-            <h1 class="mt-5">Template with dark fixed navbar and sticky footer</h1>
-            <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and
-                CSS. A fixed navbar has been added with padding-top: 60px; on the main > .container.</p>
+        <div class="container col-xxl-9 px-4 py-5 mt-5">
+            <h2 class="border-1 border-bottom border-dark text-dark">The Code</h2>
+            <div class="row">
+                <div class="col-12" id="codeCol">
+                    <pre>
+                        <code class="language-javascript line-numbers">
+
+//FizzBuzz process
+//Get the input
+function getValues(){
+    let fizzVal = document.getElementById("fizzVal").value;
+    let buzzVal = document.getElementById("buzzVal").value;
+
+    //Convert to integer
+    fizzVal = parseInt(fizzVal);
+    buzzVal = parseInt(buzzVal);
+
+    // Verify that we have numbers
+    if (isNaN(fizzVal) || isNaN(buzzVal)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Only numbers, Please try again!'
+        })
+        return;
+    } else {
+        fizzBuzzData = fizzBuzz(fizzVal, buzzVal);
+        displayData(fizzBuzzData);
+    }
+}
+
+function fizzBuzz(fizzVal, buzzVal) {
+    let returnArray = [];
+    //Run loop from 1 to 100
+    for (let i = 1; i <= 100; i++) { 
+        //Determine if Fizz, Buzz, or FizzBuzz 
+        if ((i % fizzVal==0) && (i % buzzVal==0)) {
+            returnArray.push("FizzBuzz"); 
+        } else if (i % fizzVal==0) { 
+            returnArray.push("Fizz"); 
+        } else if (i % buzzVal==0) {
+            returnArray.push("Buzz"); 
+        } else { returnArray.push(i); 
+        } 
+    } 
+    return returnArray; 
+}
+
+//Print the results Fizz, Buzz FizzBuzz, or the number
+function displayData(fizzBuzzData) {
+    //access the table bodyelement on the DOM
+    let tableBody = document.getElementById("output");
+
+    //access the template element on the DOM
+    let templateRow = document.getElementById("fbTemplate");
+
+    //clear out any information currently in the table body (let's the code run multiple times without stacking)
+    tableBody.innerHTML = '';
+
+    //go through the supplied FB information and fill out table rows with it
+    for (let index = 0; index < fizzBuzzData.length; index +=5) { 
+        //grab the inside of the template element, but not the template element itself 
+        const tableRow=document.importNode(templateRow.content, true); 
+        
+        //tableRow represents the <tr> and all <td> from inside de template
+        //we only want to interact with the <td> elements
+        let rowCols = tableRow.querySelectorAll("td");
+
+        rowCols[0].classList.add(fizzBuzzData[index]);
+        rowCols[0].textContent = fizzBuzzData[index];
+
+        rowCols[1].classList.add(fizzBuzzData[index + 1]);
+        rowCols[1].textContent = fizzBuzzData[index + 1];
+
+        rowCols[2].classList.add(fizzBuzzData[index + 2]);
+        rowCols[2].textContent = fizzBuzzData[index + 2];
+
+        rowCols[3].classList.add(fizzBuzzData[index + 3]);
+        rowCols[3].textContent = fizzBuzzData[index + 3];
+
+        rowCols[4].classList.add(fizzBuzzData[index + 4]);
+        rowCols[4].textContent = fizzBuzzData[index + 4];
+
+        tableBody.appendChild(tableRow);
+    }
+
+}
+
+
+                        </code>
+                    </pre>
+                </div>
+                <div class="col" id="explainCol">
+                </div>
+            </div>
         </div>
-    </main>
-    <footer class="footer mt-auto py-3 bg-dark">
-        <div class="container-fluid text-center text-secondary">
+    </main>n>
+    <footer class="footer mt-auto py-3 ft">
+        <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
-                    &copy2021 <span>A. Morales | Demo Code</span>
+                    &copy2021 <span>A. Morales</span>
                 </div>
                 <div class="col">
                     <span class="text-uppercase"> alberto morales</span>
                 </div>
                 <dic class="col">
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-linkedin fa-3x bg-dark"></i></a>
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-github fa-3x bg-dark"></i></a>
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-twitter fa-3x bg-dark"></i></a>
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-youtube fa-3x bg-dark"></i></a>
+                    <a href="#" class="" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="https://github.com/sealtx72" class="" target="_blank"><i
+                            class="fab fa-github fa-2x"></i></a>
+                    <a href="https://twitter.com/anytimecoders" class="" target="_blank"><i
+                            class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
             </div>
         </div>
-
-
     </footer>
 
 

@@ -18,16 +18,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 fb">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top ft">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">JavaScript Template</a>
+            <a class="navbar-brand" href="/index.html"><span class="iconify" data-icon="dashicons:buddicons-replies"
+                    data-inline="false"></span> Fizz Buzz</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="/index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/app.html">The App</a>
@@ -44,7 +46,7 @@
                         <a class="nav-link" href="/code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/about.html">About Me</a>
+                        <a class="nav-link" href="/about.html">About Me</a>
                     </li>
                 </ul>
             </div>
@@ -53,29 +55,31 @@
 
     <main class="flex-shrink-0">
         <div class="container">
-            <h1 class="mt-5">Template with dark fixed navbar and sticky footer</h1>
-            <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and
-                CSS. A fixed navbar has been added with padding-top: 60px; on the main > .container.</p>
+            <h2 class="border-1 border-bottom border-dark text-dark mt-5">About Me</h2>
+            <p class="lead"><strong>In this section you will know more about the programmer.</strong></p>
+            <p>Check out my home page: </p>
+            <p>You will be redirected to a new tab.</p>
+            <a type="button" class="btn btn-warning" href="https://amorales.netlify.app/">Click Here</a>
         </div>
     </main>
-    <footer class="footer mt-auto py-3 bg-dark">
-        <div class="container-fluid text-center text-secondary">
+    <footer class="footer mt-auto py-3 ft">
+        <div class="container-fluid text-center">
             <div class="row">
                 <div class="col">
-                    &copy2021 <span>A. Morales | Demo Code</span>
+                    &copy2021 <span>A. Morales</span>
                 </div>
                 <div class="col">
                     <span class="text-uppercase"> alberto morales</span>
                 </div>
                 <dic class="col">
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-linkedin fa-3x bg-dark"></i></a>
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-github fa-3x bg-dark"></i></a>
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-twitter fa-3x bg-dark"></i></a>
-                    <a href="#" class="text-secondary" target="_blank"><i class="fab fa-youtube fa-3x bg-dark"></i></a>
+                    <a href="#" class="" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="https://github.com/sealtx72" class="" target="_blank"><i
+                            class="fab fa-github fa-2x"></i></a>
+                    <a href="https://twitter.com/anytimecoders" class="" target="_blank"><i
+                            class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
             </div>
         </div>
-
-
     </footer>
 
 

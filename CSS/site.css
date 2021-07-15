@@ -1,7 +1,7 @@
- /*main>.container {
+ main>.container {
      padding: 60px 15px 0;
  }
-
+/*
  a:link {
      color: gray;
 
@@ -12,3 +12,32 @@
  a:active {
      color: gray;
  }*/
+
+ .Fizz {
+    color: rebeccapurple;
+ }
+
+ .Buzz {
+    color: #E66310;
+ }
+
+ .FizzBuzz {
+    color: #3D2E1F;
+ }
+ .ft {
+     background-color: #E6834C;
+ }
+ .fb {
+     background-color: #FFD39B;
+ }
+
+ a {
+     color: #3D2E1F;
+     
+ }
+
+
+ a:hover {
+     color: #745c3d;
+
+ }
